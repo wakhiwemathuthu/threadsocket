@@ -1,0 +1,59 @@
+* {
+  user-select: none;
+}
+/* Webkit (Chrome, Safari) Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #6c6c6f;
+  border-radius: 6px;
+}
+/* Firefox Scrollbars */
+/* These styles will only affect the track in Firefox. */
+scrollbar {
+  width: 8px;
+}
+scrollbar-track {
+  background: #6c6c6f;
+}
+/* Internet Explorer Scrollbars */
+/* Note: Internet Explorer does not support custom scrollbar styling. */
+/* These styles will only affect the scrollbar in Edge and IE. */
+scrollbar {
+  width: 8px;
+}
+scrollbar-thumb {
+  background: #6c6c6f;
+  border-radius: 6px;
+}
+/* Generic Scrollbars (for compatibility) */
+/* These styles will be applied to all browsers as a fallback. */
+.scrollbar {
+  width: 8px;
+}
+.scrollbar-track {
+  background: transparent;
+}
+.scrollbar-thumb {
+  background: #6c6c6f;
+  border-radius: 6px;
+}
+.EmojiPickerReact {
+  --epr-bg-color: #1a1d21 !important;
+  --epr-category-label-bg-color: #1a1d21 !important;
+  --epr-border-color: red !important;
+  --epr-text-color: #908f93 !important;
+  --epr-search-input-bg-color: transparent !important;
+  --epr-search-input-text-color: white !important;
+  --epr-search-border-color: #148567 !important;
+  --epr-preview-border-color: #2b2a2f !important;
+  --epr-picker-border-color: #2b2a2f !important;
+}
+
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
