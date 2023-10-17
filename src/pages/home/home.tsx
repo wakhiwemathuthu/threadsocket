@@ -393,7 +393,7 @@ function Home({ state, toggleSideBar }: Props) {
               <p className="text-white font-bold">Exposure</p>
               <div className="flex items-center gap-2 mt-2">
                 <input
-                  onChange={(e: ChangeEvent<HTMLInputElement>) => {
+                  onChange={() => {
                     setChannelExposure("public");
                   }}
                   name="visibility"
@@ -407,7 +407,7 @@ function Home({ state, toggleSideBar }: Props) {
               </div>
               <div className="flex items-center gap-2 mt-2">
                 <input
-                  onChange={(e: ChangeEvent<HTMLInputElement>) => {
+                  onChange={() => {
                     setChannelExposure("private");
                   }}
                   name="visibility"

@@ -1,7 +1,6 @@
 import { FaAngleDown } from "react-icons/fa";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import FilledButton from "../../components/filled-button";
-import { useParams } from "react-router-dom";
 import EmojiPicker from "emoji-picker-react";
 import { useEffect, useRef, useState } from "react";
 import { Theme } from "emoji-picker-react";
@@ -15,7 +14,6 @@ type Props = {
 };
 
 function Channel({ state, toggleSideBar }: Props) {
-  const { channelId } = useParams();
   const [emojiModal, setEmojiModal] = useState<"visible" | "hidden">("hidden");
   const [input, setInput] = useState<string>("");
   const messageInputRef = useRef<HTMLInputElement | null>(null);
