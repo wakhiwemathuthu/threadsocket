@@ -20,8 +20,6 @@ function Channel({ state, toggleSideBar }: Props) {
     "visible" | "hidden"
   >("hidden");
   const [input, setInput] = useState<string>("");
-  const [channelTopic, setChannelTopic] = useState<string>("");
-  const [channelDescription, setChannelDescription] = useState<string>("");
   const [searchInputFocus, setSearchInputFocus] = useState<boolean>(false);
   const messageInputRef = useRef<HTMLInputElement | null>(null);
   const emojiButtonRef = useRef<HTMLButtonElement | null>(null);
