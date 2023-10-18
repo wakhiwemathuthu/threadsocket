@@ -39,7 +39,24 @@ function Channel({ state, toggleSideBar }: Props) {
   };
 
   useEffect(() => {
-    
+    const handleFocus = () => {
+      setSearchInputFocus(true);
+    };
+    const handleBlur = () => {
+      setSearchInputFocus(false);
+    };
+
+    if (searchInputRef.current) {
+      searchInputRef.current.addEventListener("focus", handleFocus);
+      searchInputRef.current.addEventListener("blur", handleBlur);
+    }
+
+    return () => {
+      if (searchInputRef.current) {
+        searchInputRef.current.removeEventListener("focus", handleFocus);
+        searchInputRef.current.removeEventListener("blur", handleBlur);
+      }
+    };
   }, []);
 
   // and when changes are detected on the emojiModal value.
