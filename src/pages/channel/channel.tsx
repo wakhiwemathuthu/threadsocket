@@ -107,13 +107,12 @@ function Channel({ state, toggleSideBar }: Props) {
         <div className="relative w-96">
           <input
             ref={searchInputRef}
-            onFocus={() => setSearchInputFocus(true)}
             placeholder="Search people on this channel"
             type="text"
             className="caret-white text-white p-1 bg-transparent border border-gray-300 rounded w-full focus:outline-2 focus:outline-green-200 md:w-96"
           />
           <div
-            className={` bg-purple-900 h-96 absolute top-10 left-0 right-0 rounded ${
+            className={` bg-purple-900 h-72 absolute top-10 left-0 right-0 rounded ${
               searchInputFocus ? "block" : "hidden"
             }`}
           ></div>
