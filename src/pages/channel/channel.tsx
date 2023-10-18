@@ -18,8 +18,10 @@ function Channel({ state, toggleSideBar }: Props) {
   const [emojiModal, setEmojiModal] = useState<"visible" | "hidden">("hidden");
   const [channelInfoModal, setChannelInfoModal] = useState<
     "visible" | "hidden"
-  >("visible");
+  >("hidden");
   const [input, setInput] = useState<string>("");
+  const [channelTopic, setChannelTopic] = useState<string>("");
+  const [channelDescription, setChannelDescription] = useState<string>("");
   const [searchInputFocus, setSearchInputFocus] = useState<boolean>(false);
   const messageInputRef = useRef<HTMLInputElement | null>(null);
   const emojiButtonRef = useRef<HTMLButtonElement | null>(null);
@@ -29,7 +31,6 @@ function Channel({ state, toggleSideBar }: Props) {
   const isMessageEmpty = message === "";
   const isEmojiModalOpen = emojiModal === "visible";
   const isSideBarOpen = state === "visible";
-  const isChannelInfoModalOpen = channelInfoModal === "visible";
 
   //A function to toggle the emoji modal.
   const toggleEmojiModal = () => {
@@ -122,11 +123,14 @@ function Channel({ state, toggleSideBar }: Props) {
             }`}
           ></div>
         </div>
-        <div className="flex items-center gap-1 p-1 rounded cursor-pointer hover:bg-black-50">
+        <button
+          onClick={() => setChannelInfoModal("visible")}
+          className="flex items-center gap-1 p-1 rounded cursor-pointer hover:bg-black-50"
+        >
           <BsHash color={"#908f93"} size={18} />
           <p className="text-gray-300">Channel name</p>
           <FaAngleDown size={18} color="#908f93" />
-        </div>
+        </button>
       </div>
       <div className="m-3">
         <div className="flex gap-2 p-3 rounded-md bg-black-200">
@@ -210,11 +214,11 @@ function Channel({ state, toggleSideBar }: Props) {
           <div className="flex flex-col gap-2 mt-2">
             <div className="flex items-center gap-2">
               <p className="text-gray-200 font-bold">Created By :</p>
-              <p className="text-white">Name of Creator</p>
+              <p className="text-white">John Doe</p>
             </div>
             <div className="flex items-center gap-2">
               <p className="text-gray-200 font-bold">Date Created :</p>
-              <p className="text-white">date when it was created</p>
+              <p className="text-white">2023-10-18 17:00</p>
             </div>
             <div className="flex items-center gap-2">
               <p className="text-gray-200 font-bold">Total members :</p>
@@ -243,7 +247,9 @@ function Channel({ state, toggleSideBar }: Props) {
               className="flex-1 resize-none placeholder:text-gray-300 caret-white text-white p-1 mt-1 bg-transparent border border-gray-300 rounded w-full focus:outline-2 focus:outline-green-200"
             />
           </div>
-          <button>Save Changes</button>
+          <button className="py-2 bg-green-200 mt-3 text-white font-bold w-full rounded shadow">
+            Save Changes
+          </button>
         </div>
       </Modal>
     </div>
