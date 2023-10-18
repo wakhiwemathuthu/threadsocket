@@ -16,8 +16,10 @@ type Props = {
 function Channel({ state, toggleSideBar }: Props) {
   const [emojiModal, setEmojiModal] = useState<"visible" | "hidden">("hidden");
   const [input, setInput] = useState<string>("");
+  const [searchInputFocus, setSearchInputFocus] = useState<boolean>(false);
   const messageInputRef = useRef<HTMLInputElement | null>(null);
   const emojiButtonRef = useRef<HTMLButtonElement | null>(null);
+  const searchInputRef = useRef<HTMLInputElement | null>(null);
 
   const message = input.replaceAll(" ", "");
   const isMessageEmpty = message === "";
@@ -36,7 +38,10 @@ function Channel({ state, toggleSideBar }: Props) {
     });
   };
 
-  //Side effect that runs on the initial render
+  useEffect(() => {
+    
+  }, []);
+
   // and when changes are detected on the emojiModal value.
   //This side effect auto focuses the message input.
   useEffect(() => {
@@ -84,12 +89,18 @@ function Channel({ state, toggleSideBar }: Props) {
         </button>
         <div className="relative w-96">
           <input
+            ref={searchInputRef}
+            onFocus={() => setSearchInputFocus(true)}
             placeholder="Search people on this channel"
             type="text"
             className="caret-white text-white p-1 bg-transparent border border-gray-300 rounded w-full focus:outline-2 focus:outline-green-200 md:w-96"
           />
+          <div
+            className={` bg-purple-900 h-96 absolute top-10 left-0 right-0 rounded ${
+              searchInputFocus ? "block" : "hidden"
+            }`}
+          ></div>
         </div>
-
         <div className="flex items-center gap-1 p-1 rounded cursor-pointer hover:bg-black-50">
           <BsHash color={"#908f93"} size={18} />
           <p className="text-gray-300">Channel name</p>
