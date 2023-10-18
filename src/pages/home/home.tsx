@@ -288,7 +288,7 @@ function Home({ state, toggleSideBar }: Props) {
           }}
           placeholder="Search people"
           type="text"
-          className="flex-1 caret-white text-white p-1 mt-3 bg-transparent border border-gray-300 rounded w-full focus:outline-2 focus:outline-green-200"
+          className="flex-1 placeholder:text-gray-300 caret-white text-white p-1 mt-3 bg-transparent border border-gray-300 rounded w-full focus:outline-2 focus:outline-green-200"
         />
         <ul className="h-96 mt-3 overflow-y-auto">
           {users.map((user) => {

@@ -8,7 +8,7 @@ export default {
         "black-800": "#1a1d21",
         "blue-400": "#1164a3",
         "blue-50": "#27242c",
-        "black-backdrop": "rgba(0,0,0,0.6)",
+        "black-backdrop": "rgba(0,0,0,0.5)",
         "black-50": "#2b2a2f",
         "black-200": "#222529",
         "green-100": "#273435",

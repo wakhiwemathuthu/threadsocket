@@ -1,5 +1,5 @@
 import { FaAngleDown } from "react-icons/fa";
-import { AiOutlineInfoCircle } from "react-icons/ai";
+import { AiOutlineClose, AiOutlineInfoCircle } from "react-icons/ai";
 import FilledButton from "../../components/filled-button";
 import EmojiPicker from "emoji-picker-react";
 import { useEffect, useRef, useState } from "react";
@@ -7,6 +7,7 @@ import { Theme } from "emoji-picker-react";
 import { GoSidebarCollapse, GoSidebarExpand, GoSmiley } from "react-icons/go";
 import { IoSend } from "react-icons/io5";
 import { BsHash } from "react-icons/bs";
+import Modal from "../../components/modal/modal";
 
 type Props = {
   state: string;
@@ -15,6 +16,9 @@ type Props = {
 
 function Channel({ state, toggleSideBar }: Props) {
   const [emojiModal, setEmojiModal] = useState<"visible" | "hidden">("hidden");
+  const [channelInfoModal, setChannelInfoModal] = useState<
+    "visible" | "hidden"
+  >("visible");
   const [input, setInput] = useState<string>("");
   const [searchInputFocus, setSearchInputFocus] = useState<boolean>(false);
   const messageInputRef = useRef<HTMLInputElement | null>(null);
@@ -25,6 +29,7 @@ function Channel({ state, toggleSideBar }: Props) {
   const isMessageEmpty = message === "";
   const isEmojiModalOpen = emojiModal === "visible";
   const isSideBarOpen = state === "visible";
+  const isChannelInfoModalOpen = channelInfoModal === "visible";
 
   //A function to toggle the emoji modal.
   const toggleEmojiModal = () => {
@@ -188,6 +193,59 @@ function Channel({ state, toggleSideBar }: Props) {
           />
         </div>
       </div>
+      <Modal state={channelInfoModal}>
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-1">
+            <BsHash color={"#d1d2d3"} size={24} />
+            <p className="text-gray-200 font-bold">Channel Name</p>
+          </div>
+          <button
+            onClick={() => setChannelInfoModal("hidden")}
+            className="rounded cursor-pointer hover:bg-black-50 p-1"
+          >
+            <AiOutlineClose size={24} color="#908f93" />
+          </button>
+        </div>
+        <div>
+          <div className="flex flex-col gap-2 mt-2">
+            <div className="flex items-center gap-2">
+              <p className="text-gray-200 font-bold">Created By :</p>
+              <p className="text-white">Name of Creator</p>
+            </div>
+            <div className="flex items-center gap-2">
+              <p className="text-gray-200 font-bold">Date Created :</p>
+              <p className="text-white">date when it was created</p>
+            </div>
+            <div className="flex items-center gap-2">
+              <p className="text-gray-200 font-bold">Total members :</p>
+              <p className="text-white">167</p>
+            </div>
+          </div>
+          <div className="mt-3">
+            <label className="text-white" htmlFor="topic">
+              Channel Topic
+            </label>
+            <input
+              id="topic"
+              placeholder="Topic here"
+              type="text"
+              className="flex-1 placeholder:text-gray-300 caret-white text-white p-1 mt-1 bg-transparent border border-gray-300 rounded w-full focus:outline-2 focus:outline-green-200"
+            />
+          </div>
+          <div className="mt-3">
+            <label className="text-white" htmlFor="description">
+              Channel Description
+            </label>
+            <textarea
+              id="description"
+              placeholder="Topic here"
+              rows={5}
+              className="flex-1 resize-none placeholder:text-gray-300 caret-white text-white p-1 mt-1 bg-transparent border border-gray-300 rounded w-full focus:outline-2 focus:outline-green-200"
+            />
+          </div>
+          <button>Save Changes</button>
+        </div>
+      </Modal>
     </div>
   );
 }
