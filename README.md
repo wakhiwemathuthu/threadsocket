@@ -24,12 +24,18 @@ ThreadSocket is a real-time chat application powered by React and Firebase, desi
 Follow these steps to get the ThreadSocket app up and running on your local machine:
 
 1. Clone this repository:
+   ```
    https://github.com/wakhiwemathuthu/threadsocket.git
-2. Navigate to the project directory:
-   `cd threadsocket`
-3. Install dependencies:
-   `npm install`
-4. Configure Firebase:
+   ```
+3. Navigate to the project directory:
+   ```
+   cd threadsocket
+   ```
+4. Install dependencies:
+   ```
+   npm install
+   ```
+6. Configure Firebase:
    
    Create a Firebase project on https://console.firebase.google.com/
    
@@ -37,8 +43,10 @@ Follow these steps to get the ThreadSocket app up and running on your local mach
    
    Add your Firebase configuration details in the src/firebase/firebaseConfig.js file.
    
-6. Start the development server:
-   `npm start`
+7. Start the development server:
+   ```
+   npm start
+   ```
 
 ## How to Contribute
 
