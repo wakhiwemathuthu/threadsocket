@@ -1,3 +1,4 @@
+import ReactDOM from "react-dom";
 import { BiSearch } from "react-icons/bi";
 import { IoMdClose } from "react-icons/io";
 
@@ -6,7 +7,7 @@ type Props = {
   state: string;
 };
 
-function SearchModal({ setSearchModal, state }: Props){
+function SearchModal({ setSearchModal, state }: Props) {
   const isVisible = state === "visible";
 
   const CloseSearchModal = (e: any) => {
@@ -15,7 +16,7 @@ function SearchModal({ setSearchModal, state }: Props){
     }
   };
 
-  return (
+  return ReactDOM.createPortal(
     <div
       onClick={CloseSearchModal}
       className={`fixed ${
@@ -45,7 +46,8 @@ function SearchModal({ setSearchModal, state }: Props){
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
 
