@@ -1,4 +1,3 @@
-import { BsHash } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
 import { FiAtSign } from "react-icons/fi";
 
@@ -7,7 +6,7 @@ type Props = {
   title: string;
 };
 
-function SideBarTile({ id, title }: Props) {
+function MessageTile({ id, title }: Props) {
   return (
     <NavLink
       className={({ isActive }) => {
@@ -31,4 +30,4 @@ function SideBarTile({ id, title }: Props) {
   );
 }
 
-export default SideBarTile;
+export default MessageTile;

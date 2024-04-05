@@ -2,13 +2,14 @@ import { LiaRocketSolid } from "react-icons/lia";
 import { IoMdArrowDropdown, IoMdArrowDropright } from "react-icons/io";
 import { AiOutlinePlus } from "react-icons/ai";
 import { useState } from "react";
-import SideBarTile from "./sidebar-user-tile";
+import MessageTile from "./message-tile";
 import { NavLink } from "react-router-dom";
 import { MdLogout } from "react-icons/md";
 import { FiEdit } from "react-icons/fi";
 import { BiHome } from "react-icons/bi";
 import FilledButton from "../filled-button";
 import Modal from "../modal/modal";
+import ChannelTile from "./channel-tile";
 
 type Props = {
   state: string;
@@ -49,32 +50,32 @@ function SideBar({ state }: Props) {
     { name: "Daniel", id: "17" },
   ];
   const channels = [
-    { name: "Channel 1" },
-    { name: "Channel 2" },
-    { name: "Channel 3" },
-    { name: "Channel 4" },
-    { name: "Channel 5" },
-    { name: "Channel 6" },
-    { name: "Channel 1" },
-    { name: "Channel 2" },
-    { name: "Channel 3" },
-    { name: "Channel 4" },
-    { name: "Channel 5" },
-    { name: "Channel 6" },
-    { name: "Channel 7" },
-    { name: "Channel 8" },
-    { name: "Channel 9" },
-    { name: "Channel 10" },
-    { name: "Channel 1" },
-    { name: "Channel 2" },
-    { name: "Channel 3" },
-    { name: "Channel 4" },
-    { name: "Channel 5" },
-    { name: "Channel 6" },
-    { name: "Channel 7" },
-    { name: "Channel 8" },
-    { name: "Channel 9" },
-    { name: "Channel 101" },
+    { name: "Channel 1", id: "12" },
+    { name: "Channel 2", id: "13" },
+    { name: "Channel 3", id: "14" },
+    { name: "Channel 4", id: "15" },
+    { name: "Channel 5", id: "16" },
+    { name: "Channel 6", id: "17" },
+    { name: "Channel 1", id: "18" },
+    { name: "Channel 2", id: "19" },
+    { name: "Channel 3", id: "20" },
+    { name: "Channel 4", id: "21" },
+    { name: "Channel 5", id: "22" },
+    { name: "Channel 6", id: "23" },
+    { name: "Channel 7", id: "24" },
+    { name: "Channel 8", id: "25" },
+    { name: "Channel 9", id: "26" },
+    { name: "Channel 10", id: "27" },
+    { name: "Channel 1", id: "28" },
+    { name: "Channel 2", id: "29" },
+    { name: "Channel 3", id: "30" },
+    { name: "Channel 4", id: "31" },
+    { name: "Channel 5", id: "32" },
+    { name: "Channel 6", id: "33" },
+    { name: "Channel 7", id: "34" },
+    { name: "Channel 8", id: "35" },
+    { name: "Channel 9", id: "36" },
+    { name: "Channel 101", id: "37" },
   ];
   const isOpen = state === "visible";
   const isMessagesVisible = directMessagesVisible === "visible";
@@ -167,7 +168,13 @@ function SideBar({ state }: Props) {
                 } `}
               >
                 {messages.map((message, index) => {
-                  return <SideBarTile id={message.id} title={message.name} />;
+                  return (
+                    <MessageTile
+                      key={index}
+                      id={message.id}
+                      title={message.name}
+                    />
+                  );
                 })}
               </div>
             </div>
@@ -197,9 +204,9 @@ function SideBar({ state }: Props) {
               >
                 {channels.map((channel, index) => {
                   return (
-                    <SideBarTile
-                      channel
-                      to={`/1${index}`}
+                    <ChannelTile
+                      key={index}
+                      id={channel.id}
                       title={channel.name}
                     />
                   );
