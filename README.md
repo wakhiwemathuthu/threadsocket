@@ -1,6 +1,6 @@
 # ThreadSocket Chat App
 
-ThreadSocket is a real-time chat application powered by React and Firebase, designed to facilitate seamless communication among users. Whether you need to engage in group discussions or have private one-on-one conversations, ThreadSocket has you covered.
+ThreadSocket is a real-time chat application powered by React, designed to facilitate seamless communication among users. Whether you need to engage in group discussions or have private one-on-one conversations, ThreadSocket has you covered.
 
 **View live version** : https://wakhiwemathuthu.github.io/threadsocket/
 
@@ -10,7 +10,7 @@ ThreadSocket is a real-time chat application powered by React and Firebase, desi
 ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)
+<!-- ![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase) -->
 
 ## Features
 
@@ -27,23 +27,15 @@ Follow these steps to get the ThreadSocket app up and running on your local mach
    ```
    https://github.com/wakhiwemathuthu/threadsocket.git
    ```
-3. Navigate to the project directory:
+2. Navigate to the project directory:
    ```
    cd threadsocket
    ```
-4. Install dependencies:
+3. Install dependencies:
    ```
    npm install
    ```
-6. Configure Firebase:
-   
-   Create a Firebase project on https://console.firebase.google.com/
-   
-   Set up Firebase Authentication and Realtime Database.
-   
-   Add your Firebase configuration details in the src/firebase/firebaseConfig.js file.
-   
-7. Start the development server:
+4. Start the development server:
    ```
    npm start
    ```
