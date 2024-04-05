@@ -7,6 +7,7 @@ import Channel from "./pages/channel/channel";
 
 function App() {
   const [sideBar, setSideBar] = useState<"visible" | "hidden">("visible");
+
   const toggleSideBar = () => {
     setSideBar((value) => {
       return value === "visible" ? "hidden" : "visible";
