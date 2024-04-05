@@ -2,7 +2,7 @@ import { LiaRocketSolid } from "react-icons/lia";
 import { IoMdArrowDropdown, IoMdArrowDropright } from "react-icons/io";
 import { AiOutlinePlus } from "react-icons/ai";
 import { useState } from "react";
-import SideBarTile from "./sidebar-tile";
+import SideBarTile from "./sidebar-user-tile";
 import { NavLink } from "react-router-dom";
 import { MdLogout } from "react-icons/md";
 import { FiEdit } from "react-icons/fi";
@@ -30,23 +30,23 @@ function SideBar({ state }: Props) {
   };
 
   const messages = [
-    { name: "Karl" },
-    { name: "Tony" },
-    { name: "Wakhiwe" },
-    { name: "John" },
-    { name: "Daniel" },
-    { name: "Wakhiwe" },
-    { name: "John" },
-    { name: "Daniel" },
-    { name: "Wakhiwe" },
-    { name: "John" },
-    { name: "Daniel" },
-    { name: "Wakhiwe" },
-    { name: "John" },
-    { name: "Daniel" },
-    { name: "Wakhiwe" },
-    { name: "John" },
-    { name: "Daniel" },
+    { name: "Karl", id: "1" },
+    { name: "Tony", id: "2" },
+    { name: "Wakhiwe", id: "3" },
+    { name: "John", id: "4" },
+    { name: "Daniel", id: "5" },
+    { name: "Wakhiwe", id: "6" },
+    { name: "John", id: "7" },
+    { name: "Daniel", id: "8" },
+    { name: "Wakhiwe", id: "9" },
+    { name: "John", id: "10" },
+    { name: "Daniel", id: "11" },
+    { name: "Wakhiwe", id: "12" },
+    { name: "John", id: "13" },
+    { name: "Daniel", id: "14" },
+    { name: "Wakhiwe", id: "15" },
+    { name: "John", id: "16" },
+    { name: "Daniel", id: "17" },
   ];
   const channels = [
     { name: "Channel 1" },
@@ -167,7 +167,7 @@ function SideBar({ state }: Props) {
                 } `}
               >
                 {messages.map((message, index) => {
-                  return <SideBarTile to={`/${index}`} title={message.name} />;
+                  return <SideBarTile id={message.id} title={message.name} />;
                 })}
               </div>
             </div>
